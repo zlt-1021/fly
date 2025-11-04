@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+  const size = +prompt('请输入数字设定棋盘大小');
+  let chessboard = '';
+  for(let row = 0;row < size;row++) {
+     for (let col = 0; col < size; col++) {
+        chessboard += (row + col) % 2 ===0? ' ':'#'
+       
+  } chessboard += '\n'
+  }
+  console.log(chessboard);
+</script>
+</html>
