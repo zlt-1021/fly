@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    function countBs(x) {
+        return countChar(x, 'B');
+    }
+    console.log(countBs("BOB"))
+    console.log(countChar("kakkerlak", "k"))
+    
+    function countChar(x, y) {
+        let count = 0;
+        for (let i = 0; i < x.length; i++) {
+            if (x[i] === y) {
+                count++;
+            }
+        }
+        return count;
+    }
+</script>
+
+</html>
