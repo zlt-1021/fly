@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function range(start, end,step) {
+          let container = [];
+          if (step = undefined) {
+    }
+    let shouldCoutinue = function() {
+        if (step > 0) {
+            return i <= end;
+        }else {
+            return i >= end;
+        }
+    }
+    let i = start;
+    while (shouldCoutinue()) {
+        container.push(i);
+        i = i + step;
+    }
+    return container;
+    }   
+    console.log(range(1,10,2));
+    
+
+</script>
+</html>
