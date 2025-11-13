@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function deepEqual(x,y) {
+        if (x ===y) {
+            return true;
+        }
+        if (x == null || y== null) {
+            return false;
+        }
+        if (typeof x !== "object" || typeof y !== "object") {
+              return false;
+        }
+            const KeysX = Object.keys(x);
+            const KeysY = Object.keys(y);
+            if (KeysX.length !== KeysY.length) {
+                return false;
+            }
+            for(let i = 0;i < KeysX.length;i++) {
+               
+                 const Key = KeysX[i];
+            if (!KeysY.includes(Key)){
+                return false;
+            }
+            if (!deepEqual(KeysY[Key],KeysX[Key])) {
+                return false;
+            } return true;
+            }
+        }
+
+    let obj = { here: { is: "an" }, object: 2 };
+        console.log(deepEqual(obj, obj));
+        // → true
+        console.log(deepEqual(obj, { here: 1, object: 2 }));
+        // → false
+        console.log(deepEqual(obj, { here: { is: "an" }, object: 2 }));
+        // → true
+
+</script>
+</html>

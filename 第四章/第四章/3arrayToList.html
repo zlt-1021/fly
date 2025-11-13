@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function arrayToList(arr) {
+        let arrayToList = null;
+        for (let i = arr.length - 1; i >= 0; i--) {
+            arrayToList = {value: arr[i], rest: arrayToList};
+        }      return arrayToList;
+    }
+        // arrayToList = {value:3, rest:null}     arrayToList = {value:2, rest:arrayToList}     arrayToList = {value:1, rest:arrayToList}      
+        // let arrayToList = null;   
+         function listToArray(list) {
+                const arr = [];
+                let current = list;
+                while (current !== null) {
+                    arr.push(current.value);
+                    current = current.rest;
+                }
+                return arr;
+            }
+            function prepend(value, list) {
+                return {value: value, rest: list};
+            }
+            function nth(list,x) {
+                let current = list;
+                let y = 0;
+                while (current !== null) {
+                    if (y === x) {
+                        return current.value;
+                    }else {
+                        current = current.rest;
+                        y++;
+                    }
+
+                }
+                return undefined;
+            }
+            console.log(arrayToList([10, 20]));
+                // → {value: 10, rest: {value: 20, rest: null}}
+                console.log(listToArray(arrayToList([10, 20, 30])));
+                // → [10, 20, 30]
+                console.log(prepend(10, prepend(20, null)));
+                 // → {value: 10, rest: {value: 20, rest: null}}
+                console.log(nth(arrayToList([10, 20, 30]), 1));
+                 // → 20
+    
+    console.log(arrayToList([1,2,3]));
+    const list = arrayToList([1,2,3]);
+    console.log(listToArray(list));
+</script>
+</html>
